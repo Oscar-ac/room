@@ -1,0 +1,62 @@
+/*# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Dark Gray: hsl(0, 0%, 63%)
+- Black: hsl(0, 0%, 0%)
+- White: hsl(0, 0%, 100%)
+- Very Dark Gray: hsl(0, 0%, 27%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 12px
+
+### Font
+
+- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+- Weights: 500, 600, 700*/
+
+/* variables 
+----------------------*/
+
+::root{
+	--dark-grey: hsl(0, 0%, 63%);
+	--black: hsl(0, 0%, 0%);
+	--white: hsl(0, 0%, 100%);
+	--very-dark-grey: hsl(0, 0%, 27%);
+}
+
+/* typography
+----------------------*/
+
+@font-face{
+	font-family: 'League Spartan';
+	src: url('https://fonts.google.com/specimen/League+Spartan');
+}
+
+.weight-5{
+	font-weight: 500;
+}
+
+.weight-6{
+	font-weight: 600;
+}
+
+.weight-7{
+	font-weight: 700;
+}
+
+body{
+	font-size: 12px;
+}
