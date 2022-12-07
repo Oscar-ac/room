@@ -273,6 +273,7 @@ nav.main-nav {
 	background-size: 20px 3px;
 }
 
+#close-button,
 #open-menu{
 	display: none;
 }
