@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
@@ -10,6 +13,7 @@
   <script type="text/javascript" src="./js/carousel.js" ></script>
   <script type="text/javascript" src="./js/nav.js" ></script>
 
+  
   <title>Frontend Mentor | Room homepage</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -31,16 +35,20 @@
     </nav>
   </header>
   <main class="site">
-    <div class="slides grid-18 grid-col-all">
-      <div class="slide grid-18 grid-col-all grid-center grid-center">
-        <img class="slide-image" src="./images/desktop-image-hero-1.jpg"/>
-        <img class="slide-image-mobile width-full" src="./images/mobile-image-hero-1.jpg"/>
-        <div class="slide-content">
+    <div class="row m-0 p-0 fader slides"><!-- slides grid-18 grid-col-all"> -->
+      <img class="col-md-7 slide-image m-0 p-0" src="./images/desktop-image-hero-1.jpg"/>
+      <img class="slide-image-mobile width-full m-0 p-0" src="./images/mobile-image-hero-1.jpg"/>
+      <div class="col-md-5 p-0 slide-content-container">
+        <div class="slide-content p-sm-0 col-12">
           <h1 class="slide-title">Discover innovative ways to decorate</h1>
 
           <p class="slide-text">We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.</p>
 
           <a class="link-button" href="#">Shop now<img src="./images/icon-arrow.svg"/></a>
+        </div>
+        <div class="arrows col-3 p-0 m-0">
+          <button class="arrow" id="button-left"><img src="./images/icon-angle-left.svg"/></button>
+          <button class="arrow" id="button-right"><img src="./images/icon-angle-right.svg"/></button>
         </div>
       </div>
 
@@ -66,19 +74,16 @@
           <a href="#">Shop now<img src="./images/icon-arrow.svg"/></a>
         </div>
       </div> -->
-      <div class="arrows">
-        <button class="arrow" id="button-left"><img src="./images/icon-angle-left.svg"/></button>
-        <button class="arrow" id="button-right"><img src="./images/icon-angle-right.svg"/></button>
-      </div>
+
     </div>
-    <div class="about-section grid-18 grid-center grid-col-all">
-      <img class="about-image" src="./images/image-about-dark.jpg">
-      <div class="about-text">
+    <div class="row m-0 p-0 align-items-center"><!-- about-section grid-18 grid-center grid-col-all"> -->
+      <img class="about-image col-md-4 p-0 m-0" src="./images/image-about-dark.jpg">
+      <div class="col-md-4 p-3">
         <h2 class="spaced weight-7 uppercase space-5">About our furniture</h2>
 
-        <p>Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.</p>
+        <p class="m-0">Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space.</p>
       </div>
-      <img class="about-image" src="./images/image-about-light.jpg">
+      <img class="about-image col-md-4 p-0 m-0" src="./images/image-about-light.jpg">
     </div>
   </main>
   <div class="attribution">

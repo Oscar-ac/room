@@ -149,7 +149,7 @@ a.link-button:hover{
 .slide-content{
 	margin-inline: auto;
 	width: min(100% - 2em, 26em);
-	padding: 2em 0 5em;
+	padding: 2em 0 2em;
 }
 
 .about-text{
@@ -172,14 +172,23 @@ a.link-button:hover{
 	grid-template-rows: repeat(2, 1fr);
 }
 
-.arrows {
-    grid-column: 15 / span 4;
-    grid-row: -1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    flex-basis: fit-content;
+.slide-content-container{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.arrows{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+	flex-basis: fit-content;
+	position: absolute;
+    top: -60px;
+    right: 0;
+    width: 120px;
 }
 
 .arrow{
@@ -218,23 +227,22 @@ a.link-button:hover{
 		display:inline-block;
 		grid-row: 1 / -1;
 	    grid-column: 1 / span 10;
-	    width: 100%;
+/*	    width: 100%;*/
 	}
-
+	
 	.slide-content {
 		grid-row: 1 / -1;
 	    grid-column: 11 / -1;
 	    margin-inline: auto;
 	    width: min(100% - 2em, 26em);
 	}
+
 	.arrows {
-	    grid-column: 11 / span 2;
-	    grid-row: -1;
+		top: unset;
+		bottom: 0;
+		left: 0;
 	}
 
-	.slides {
-		align-items: end;
-	}
 	img.slide-image-mobile{
 		display: none;
 	}
@@ -247,6 +255,7 @@ header {
     position: absolute;
     width: 100%;
     top: 0;
+    z-index: 500000;
     padding: 5rem;
     display: flex;
     align-items: center;
@@ -313,4 +322,20 @@ nav.main-nav {
 		border: 0;
 	}
 
+}
+
+/*************
+TRANSITIONS AND ANIMATIONS
+*/
+
+.opacity-0{
+	opacity: 0;
+}
+
+.opacity-1{
+	opacity: 1;
+}
+
+.fader *{
+	transition: opacity linear 250ms;
 }

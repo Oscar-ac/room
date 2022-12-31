@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var index = 0;
 
+  const slides = document.querySelector(".slides");
   const imageContainer = document.querySelector(".slide-image");
   const imageMobileContainer = document.querySelector(".slide-image-mobile");
+  const slideContent = document.querySelector(".slide-content");
   const textContainer = document.querySelector(".slide-text");
-  const titleConatiner = document.querySelector(".slide-title");
+  const titleContainer = document.querySelector(".slide-title");
 
   const content = [{ 
       title: "Discover innovative ways to decorate",
@@ -60,12 +62,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   const addContent = (i) => {
     console.log(imageContainer);
-
-    imageContainer.src = content[i].img;
-    imageMobileContainer.src = content[i].imgMobile;
-    textContainer.innerHTML = content[i].text;
-    titleConatiner.innerHTML = content[i].title;
-
+    imageContainer.classList.add("opacity-0");
+    imageMobileContainer.classList.add("opacity-0");
+    textContainer.classList.add("opacity-0");
+    titleContainer.classList.add("opacity-0");
+    setTimeout(() => {
+      imageContainer.src = content[i].img;
+      imageMobileContainer.src = content[i].imgMobile;
+      textContainer.innerHTML = content[i].text;
+      titleContainer.innerHTML = content[i].title;
+      imageContainer.classList.remove("opacity-0");
+      imageMobileContainer.classList.remove("opacity-0");
+      textContainer.classList.remove("opacity-0");
+      titleContainer.classList.remove("opacity-0");
+    }, 250);
   }
 
   // addContent(0);
