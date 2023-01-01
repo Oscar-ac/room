@@ -34,30 +34,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const left = document.querySelector("#button-left");
 
   left.addEventListener("click", function(event){
-    console.log(event.target);
-    index--;
+    reduce();
+  });
 
+  right.addEventListener("click", function(event){
+    increase();
+  });
+
+  document.addEventListener('keydown', function(event) {
+      if(event.keyCode == 37) {
+        reduce();
+      }
+      else if(event.keyCode == 39) {
+        increase();
+      }
+  });
+
+  const reduce = () => {
+    index--;
     if(index < 0){
       index = content.length - 1;
     }
-
     addContent(index);
-    console.log(index);
+  }
 
-
-  });
-  right.addEventListener("click", function(event){
-    console.log(event.target);
+  const increase = () => {
     index++;
-
-
     if(index > content.length - 1){
       index = 0;
     }
-
     addContent(index);
-    console.log(index);
-  });
+  }
 
 
   const addContent = (i) => {

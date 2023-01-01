@@ -63,7 +63,7 @@ The designs were created to the following widths:
 }
 
 body{
-	font-size: 12px;
+	font-size: 14px;
 	font-family: 'League Spartan';
 	margin: 0;
 }
@@ -76,6 +76,10 @@ p{
 
 h1{
 	font-size: 38px;
+	margin-bottom: 0.5em;
+	margin-top: 0;
+	font-weight: 900;
+	line-height: 1.1;
 }
 
 h2{
@@ -140,6 +144,7 @@ a.link-button:hover{
 .about-text,
 .about-image{
 	grid-column: 1 / -1;
+	width: 100%;
 }
 
 .slide-image{
@@ -148,14 +153,14 @@ a.link-button:hover{
 
 .slide-content{
 	margin-inline: auto;
-	width: min(100% - 2em, 26em);
-	padding: 2em 0 2em;
+	width: min(100% - 4em, 26em);
+	padding: 4em 0;
 }
 
 .about-text{
-	width: min(100% - 2em, 31em);
+    width: min(100% - 4em, 34em);
     margin-inline: auto;
-    padding: 2em 0;
+    padding: 2em 0em;
 }
 
 /*.about-text {
@@ -172,72 +177,89 @@ a.link-button:hover{
 	grid-template-rows: repeat(2, 1fr);
 }
 
-.slide-content-container{
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.slide-content-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
 }
 
-.arrows{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
-	flex-basis: fit-content;
-	position: absolute;
-    top: -60px;
+
+.arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 6 / span 2;
+    flex-grow: 1;
+    flex-basis: fit-content;
+    position: absolute;
+    top: calc(100vw / -7);
     right: 0;
-    width: 120px;
+    width: 100%;
 }
 
-.arrow{
+
+button.arrow{
 	width: 100%;
 	aspect-ratio: 1 / 1;
 	background-color: var(--black);
 	color: var(--white);
 	outline: none;
 	border: 0;
-	transition: 150ms linear background-color;
+	padding: 0;
+	transition: background-color 150ms linear;
 }
 
-.arrow:hover{
-	background-color: var(--dark-grey);
+button.arrow:hover{
+	background-color: var(--very-dark-grey);
 }
 
 .slide-image{
 	display:none;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 880px) {
 
 	.about-image:first-child {
-	    grid-column: 1 / span 6;
+	    grid-column: 1 / span 5;
 	}
 
 	.about-image:last-child {
-	    grid-column: 13 / span 6;
+	    grid-column: 14 / span 5;
+	}
+
+	.about-image{
+		height: 100%;
+		width: 100%;
+
 	}
 
 	.about-text {
-	    grid-column: 7 / span 6;
+	    grid-column: 6 / span 8;
 	}
 
 	img.slide-image {
 		display:inline-block;
 		grid-row: 1 / -1;
-	    grid-column: 1 / span 10;
-/*	    width: 100%;*/
+	    grid-column: 1 / span 11;
+	    width: 100%;
 	}
 	
+	.slide-content-container{
+		grid-row: 1 / -1;	
+	    grid-column: 12 / -1;
+	}
+
 	.slide-content {
-		grid-row: 1 / -1;
-	    grid-column: 11 / -1;
+
 	    margin-inline: auto;
 	    width: min(100% - 2em, 26em);
 	}
 
 	.arrows {
+		grid-column: 1 / span 2;
 		top: unset;
 		bottom: 0;
 		left: 0;
@@ -256,7 +278,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 500000;
-    padding: 5rem;
+    padding: 3rem;
     display: flex;
     align-items: center;
 }
@@ -287,7 +309,7 @@ nav.main-nav {
 	display: none;
 }
 
-@media screen and (max-width: 37.5em){
+@media screen and (max-width: 880px){
 	header{
 		padding: 2em 0;
 		align-items: center;
@@ -298,13 +320,16 @@ nav.main-nav {
 		position: absolute;
 		top: -10em;
 		background-color: var(--white);
-		padding: 3rem;
+		padding: 1.75em 1em;
 		color: var(--black);
 		width: 100%;
+		display: flex;
 	}
 
 	nav.main-nav a{
 		color: inherit;
+		padding-block: 0;
+		font-weight: 700;
 	}
 
 	.show-menu{
@@ -314,12 +339,15 @@ nav.main-nav {
 	#close-button,
 	#open-menu{
 		display: inline-block;
-		position: absolute;
-		top: 1.75em;
-		left: 1em;
 		background-color: transparent;
 		outline: none;
 		border: 0;
+	}
+	#open-menu{
+		position: absolute;
+		top: 1.75em;
+		left: 1em;
+
 	}
 
 }
